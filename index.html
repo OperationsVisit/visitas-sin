@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel de Visitas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Painel de Visitas</h1>
+
+<section class="card">
+  <h2>Cadastro de Visita</h2>
+
+  <input type="file" id="uploadClientes" accept=".csv">
+
+  <input type="text" id="sap" placeholder="SAP da Clínica">
+  <input type="text" id="cliente" placeholder="Nome da Clínica" disabled>
+
+  <input type="date" id="data">
+  <input type="number" id="distancia" placeholder="Distância (km)">
+
+  <select id="tipo">
+    <option value="Presencial">Presencial</option>
+    <option value="Online">Online</option>
+  </select>
+
+  <input type="text" id="motivo" placeholder="Motivo da visita">
+
+  <button onclick="registrarVisita()">Registrar Visita</button>
+</section>
+
+<section class="card">
+  <h2>Filtros</h2>
+  <input type="month" id="filtroMes" onchange="renderizar()">
+</section>
+
+<section class="dashboard">
+  <div>Total Visitas: <span id="totalVisitas">0</span></div>
+  <div>Presenciais: <span id="totalPresencial">0</span></div>
+  <div>Online: <span id="totalOnline">0</span></div>
+  <div>KM Rodado: <span id="totalKm">0</span></div>
+</section>
+
+<section class="card">
+  <button onclick="exportarCSV()">Exportar CSV</button>
+</section>
+
+<section id="visitas"></section>
+
+<script src="script.js"></script>
+</body>
+</html>
